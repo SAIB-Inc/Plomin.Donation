@@ -1,0 +1,7 @@
+version: 1.0
+runtime: docker
+build:
+  path: .
+run:
+  network:
+    port: 8080 # Replace with the port your app listens on
