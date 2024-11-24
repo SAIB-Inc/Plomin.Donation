@@ -1,4 +1,11 @@
 ﻿@page "/"
+@rendermode InteractiveServer
+@using PlominFamily.Services
+@using Microsoft.AspNetCore.Components
+@inherits ComponentBase
+@implements IDisposable
+
+@inject AppStateService AppStateService
 
 <PageTitle>In Loving Memory of Matthew Plomin</PageTitle>
 
@@ -20,7 +27,8 @@
 
                     <!-- Subheading -->
                     <h3 class="text-lg text-secondary italic mt-2">
-                        "A visionary leader, devoted husband, and beloved member of the Cardano community."
+                        "A visionary leader, devoted husband, loving father, and beloved member of the Cardano
+                        community."
                     </h3>
 
                     <!-- Divider -->
@@ -88,7 +96,7 @@
             <!-- Card Content -->
             <MudCardContent>
                 <!-- Donation Total -->
-                <h1 class="text-4xl font-extrabold text-warning mt-4 text-center">12,345 ADA</h1>
+                <h1 class="text-4xl font-extrabold text-warning mt-4 text-center">@BalanceInAda.ToString("N6") ADA</h1>
 
                 <!-- QR Code -->
                 <div class="mt-6 flex justify-center">
@@ -108,15 +116,22 @@
 
             <!-- Card Actions -->
             <MudCardActions Class="justify-center mt-6">
-                <MudButton Variant="Variant.Filled" Color="Color.Primary"
+                <MudButton Variant="Variant.Filled" Color="Color.Primary" Disabled="true"
                     Class="px-6 py-2 hover:bg-blue-700 hover:text-white">
                     Connect Wallet
                 </MudButton>
-                <MudButton Variant="Variant.Outlined" Color="Color.Secondary"
+                <MudButton Disabled="true" Variant="Variant.Outlined" Color="Color.Secondary"
                     Class="px-6 py-2 hover:bg-teal-700 hover:text-white ml-4">
                     Donate Now
                 </MudButton>
             </MudCardActions>
+
+            <!-- Disabled Message -->
+            <MudCardContent Class="text-center mt-4">
+                <p class="text-sm text-gray-600 italic font-bold">
+                    Note: I still need to implement these buttons, please use the QR Code or the Handle / Address for now. - Clark
+                </p>
+            </MudCardContent>
         </MudCard>
     </div>
 </div>
@@ -124,3 +139,22 @@
     <div class='sk-ww-twitter-hashtag-feed' data-embed-id='25491450'></div>
     <script src='https://widgets.sociablekit.com/twitter-hashtag-feed/widget.js' async defer></script>
 </div>
+
+@code {
+    private decimal BalanceInAda => (decimal)AppStateService.Balance / 1_000_000;
+
+    protected override void OnInitialized()
+    {
+        AppStateService.OnBalanceUpdate += OnBalanceUpdated;
+    }
+
+    public void Dispose()
+    {
+        AppStateService.OnBalanceUpdate -= OnBalanceUpdated;
+    }
+
+    private void OnBalanceUpdated()
+    {
+        InvokeAsync(StateHasChanged);
+    }
+}
