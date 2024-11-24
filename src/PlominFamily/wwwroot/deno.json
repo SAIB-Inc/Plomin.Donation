@@ -1,0 +1,9 @@
+{
+  "imports": {
+    "tailwindcss": "npm:tailwindcss@^3.4.15"
+  },
+  "tasks": {
+    "build:css": "deno run -A npm:tailwindcss build -i ./styles/app.css -o ./dist/app.bundle.css",
+    "watch:css": "deno run -A npm:tailwindcss build -i ./styles/app.css -o ./dist/app.bundle.css --watch"
+  }
+}

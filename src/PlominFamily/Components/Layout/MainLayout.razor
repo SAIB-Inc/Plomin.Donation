@@ -1,0 +1,57 @@
+﻿@inherits LayoutComponentBase
+
+@* Required *@
+<MudThemeProvider Theme="_theme" />
+<MudPopoverProvider />
+
+@* Needed for dialogs *@
+<MudDialogProvider />
+
+@* Needed for snackbars *@
+<MudSnackbarProvider />
+
+@Body
+
+@code {
+    MudTheme _theme = new()
+        {
+            PaletteLight = new()
+            {
+                Primary = "#002855", // Navy Blue
+                Secondary = "#008080", // Teal
+                Tertiary = "#D3D3D3", // Soft Gray
+                Info = "#50C878", // Emerald Green (for informational highlights)
+                Warning = "#FFD700", // Gold (for accents or important elements)
+                Background = "#FFFFFF", // White background for clarity and simplicity
+                Surface = "#FFFFFF", // White for cards and surfaces
+                AppbarBackground = "#002855", // Navy Blue for the app bar
+                DrawerBackground = "#D3D3D3", // Soft Gray for side drawers
+                TextPrimary = "#002855", // Navy Blue for primary text
+                TextSecondary = "#008080" // Teal for secondary text
+            },
+            Typography = new Typography()
+            {
+                Default = new DefaultTypography()
+                {
+                    FontFamily = ["Roboto", "Arial", "sans-serif"],
+                    FontSize = "0.875rem"
+                },
+                H1 = new H1Typography()
+                {
+                    FontSize = "2.25rem",
+                    FontWeight = "500",
+                    LetterSpacing = "-0.01562em"
+                },
+                H2 = new H2Typography()
+                {
+                    FontSize = "1.75rem",
+                    FontWeight = "500",
+                    LetterSpacing = "-0.00833em"
+                }
+            },
+            LayoutProperties = new LayoutProperties()
+            {
+                DefaultBorderRadius = "8px" // Rounded corners for a softer design
+            }
+        };
+}

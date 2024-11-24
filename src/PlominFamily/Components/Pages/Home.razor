@@ -1,0 +1,126 @@
+﻿@page "/"
+
+<PageTitle>In Loving Memory of Matthew Plomin</PageTitle>
+
+<div class="container mx-auto mt-8 px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Left Column: Information -->
+        <div class="bg-gray-50 p-8 rounded-lg">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                <!-- Left Column: Image -->
+                <div class="col-span-1 flex justify-center">
+                    <MudImage Src="/images/mathew.webp" Alt="Matthew Plomin"
+                        Class="rounded-lg shadow-md w-full max-w-xs h-auto" />
+                </div>
+
+                <!-- Right Column: Text Content -->
+                <div class="col-span-2">
+                    <!-- Header -->
+                    <h2 class="text-2xl font-bold text-primary">In Loving Memory of Matthew Plomin</h2>
+
+                    <!-- Subheading -->
+                    <h3 class="text-lg text-secondary italic mt-2">
+                        "A visionary leader, devoted husband, and beloved member of the Cardano community."
+                    </h3>
+
+                    <!-- Divider -->
+                    <hr class="border-gray-200 my-4" />
+
+                    <!-- Body Text -->
+                    <p class="text-base leading-relaxed text-secondary mt-4">
+                        This page is dedicated to honoring Matthew Plomin, a beloved member of the Cardano community,
+                        a visionary leader, and a devoted husband and father. Matthew's contributions to USDM and
+                        the blockchain space have left an indelible mark on all who knew him.
+                    </p>
+                    <p class="text-base leading-relaxed text-secondary mt-4">
+                        Your support will help his wife Jillian and their seven children during this difficult time.
+                        Thank you for being part of this community effort to honor Matthew's legacy.
+                    </p>
+
+                    <!-- Official Announcement Link -->
+                    <p class="text-sm text-gray-600 mt-6">
+                        For the official announcement of Matthew's passing, please visit
+                        <a href="https://x.com/USDMOfficial/status/1858510475715383620" target="_blank"
+                            class="text-primary font-bold hover:underline">
+                            USDM's official statement
+                        </a>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Donated By Section -->
+            <MudCard Elevation="2" Class="mt-6 !bg-gray-100">
+                <!-- Card Content -->
+                <MudCardContent Class="p-4 text-center">
+                    <!-- Message -->
+                    <p class="text-sm text-gray-600">
+                        This page was created with love and care by
+                    </p>
+                    <!-- SAIB Logo -->
+                    <div class="flex justify-center mt-2">
+                        <a href="https://saib.dev" target="_blank">
+                            <MudImage src="/images/saib.svg" alt="SAIB Inc Logo" class="w-24 h-auto" />
+                        </a>
+                    </div>
+
+                    <!-- Divider -->
+                    <hr class="border-gray-300 w-full my-4" />
+
+                    <!-- Cardano Collaboration -->
+                    <p class="text-sm text-gray-600">In collaboration with the Cardano Community</p>
+                    <!-- Cardano Logo -->
+                    <div class="flex justify-center mt-2">
+                        <img src="/images/cardano.svg" alt="Cardano Logo" class="w-16 h-auto" />
+                    </div>
+                </MudCardContent>
+            </MudCard>
+        </div>
+
+        <!-- Right Column: Donation Visuals -->
+        <MudCard Elevation="4" Class="p-6 rounded-lg shadow-md">
+            <!-- Card Header -->
+            <MudCardHeader>
+                <MudText Typo="Typo.h5" Align="Align.Center" Class="font-bold text-primary">
+                    Total Donations Raised
+                </MudText>
+            </MudCardHeader>
+
+            <!-- Card Content -->
+            <MudCardContent>
+                <!-- Donation Total -->
+                <h1 class="text-4xl font-extrabold text-warning mt-4 text-center">12,345 ADA</h1>
+
+                <!-- QR Code -->
+                <div class="mt-6 flex justify-center">
+                    <img src="/images/qr.png" alt="Donation QR Code" class="w-40 h-auto rounded-md shadow-md" />
+                </div>
+                <p class="text-secondary text-center mt-2">Scan to Donate</p>
+
+                <!-- Wallet Details -->
+                <div class="mt-6 bg-gray-50 p-4 rounded-lg shadow-sm">
+                    <p><span class="font-bold text-primary">Handle:</span> $plominfamily</p>
+                    <p><span class="font-bold text-primary">Wallet Address:</span></p>
+                    <p class="break-all text-sm text-gray-600">
+                        addr1q9rmd3ljmaw8lyswtqv78f5u9p7jr7umh477c2yhg9md239478d6acp85kn5knrarz68w05acw4faajr22g6ugkeurgsgzrwvv
+                    </p>
+                </div>
+            </MudCardContent>
+
+            <!-- Card Actions -->
+            <MudCardActions Class="justify-center mt-6">
+                <MudButton Variant="Variant.Filled" Color="Color.Primary"
+                    Class="px-6 py-2 hover:bg-blue-700 hover:text-white">
+                    Connect Wallet
+                </MudButton>
+                <MudButton Variant="Variant.Outlined" Color="Color.Secondary"
+                    Class="px-6 py-2 hover:bg-teal-700 hover:text-white ml-4">
+                    Donate Now
+                </MudButton>
+            </MudCardActions>
+        </MudCard>
+    </div>
+</div>
+<div class="container mx-auto mt-8 px-4">
+    <div class='sk-ww-twitter-hashtag-feed' data-embed-id='25491450'></div>
+    <script src='https://widgets.sociablekit.com/twitter-hashtag-feed/widget.js' async defer></script>
+</div>
